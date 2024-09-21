@@ -1,0 +1,23 @@
+.carouselContainer {
+  overflow: hidden;
+  margin-top: 5%;
+  width: 100%;
+  // background-image: linear-gradient(120deg, black, black, maroon, black);
+  padding: 20px 0;
+  word-spacing: 2px;
+}
+
+.carouselTrack {
+  display: flex;
+  white-space: nowrap;
+  word-spacing: 2px;
+}
+
+.carouselItem {
+  display: inline-block;
+  padding: 0 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  word-spacing: 10px;
+}

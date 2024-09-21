@@ -1,0 +1,108 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  color: black;
+  font-size: 30px;
+}
+
+.container {
+  text-align: center;
+  border: 2px solid black;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.container h1 {
+  font-size: 75px;
+  border-bottom: 5px solid black;
+}
+
+.data-analysis,
+.coding,
+.lifestyle,
+.others {
+  color: black;
+  width: 100%;
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 20px;
+  margin-left: 2%;
+  margin-right: 2%;
+
+  button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+    border: 2px solid black;
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+  }
+}
+
+.data-analysis .b1,
+.coding .b1,
+.lifestyle .b1,
+.others .b1 {
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border-right: 5px solid black;
+  border-bottom: 5px solid black;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.b1:hover {
+  box-shadow: 5px 5px 5px 5px lightgray;
+  transition: all 0.7s ease-in-out;
+}
+
+.b1:hover button {
+  color: black;
+  background-color: white;
+  transition: all 0.7s ease-in-out;
+  border-radius: 25px;
+}
+
+/* Responsive layout */
+@media (max-width: 1200px) {
+  .data-analysis,
+  .coding,
+  .lifestyle,
+  .others {
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  }
+}
+
+@media (max-width: 900px) {
+  .data-analysis,
+  .coding,
+  .lifestyle,
+  .others {
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  }
+}
+
+@media (max-width: 600px) {
+  .data-analysis,
+  .coding,
+  .lifestyle,
+  .others {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+
+  .container h1 {
+    font-size: 50px;
+    button {
+      font-size: 16px;
+    }
+  }
+}
