@@ -38,15 +38,12 @@ To integrate and start using the AI library in your project, follow these simple
 ```Coming Soon ```
 
 3. **Documentation:**
-   For detailed API documentation and usage examples, please refer to our [docs](link_to_your_docs).
+  Coming Soon
 
 ## Contributing
-We welcome contributions! Please see our [CONTRIBUTING.md](link_to_your_contributing_file) for guidelines on how to get started.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](link_to_your_license_file) for more information.
+We welcome contributions! 
 
 ## Contact
-For inquiries or feedback, please reach out via [your-email@example.com](mailto:your-email@example.com).
+For inquiries or feedback, please reach out via [ad721603@gmail.com](mailto:ad721603@gmail.com).
 
 ---
