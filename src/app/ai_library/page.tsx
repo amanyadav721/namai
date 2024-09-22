@@ -1,10 +1,6 @@
 "use client";
-import { useRouter } from "next/navigation"; // Import useRouter
 import styles from "./library.module.scss";
 import events from "../services/firebase/firebase";
-interface AiLibrary {
-  txt: string;
-}
 
 const data = [
   {
@@ -71,48 +67,36 @@ const data = [
 ];
 
 export default function AiLibrary() {
-  const router = useRouter(); // Initialize useRouter
-
-  const handleNavigation = (title: string, iframeSrc: any) => {
-    const encodedTitle = encodeURIComponent(title);
-    const encodedIframeSrc = encodeURIComponent(iframeSrc);
+  const handleNavigation = (iframeSrc: string) => {
     events("aiapp_choose", {
-      ai_name: title,
+      ai_name: iframeSrc,
     });
-    router.push(`/ai_library/${encodedTitle}/${encodedIframeSrc}`);
+    window.location.href = iframeSrc; // Redirects to the external URL
   };
 
   return (
-    <>
-      <div>
-        <div className={styles.header}>
-          <h1>Welcome to AI Library</h1>
-        </div>
-
-        {data.map((section, index) => (
-          <div className={styles.container}>
-            <h1>{section.category}</h1>
-
-            <div key={index}>
-              <div className={styles[section.category.toLowerCase()]}>
-                {section.items.map((item) => (
-                  <div className={styles.b1} key={item.id}>
-                    <h2>{item.title}</h2>
-                    <p>{item.description}</p>
-                    <button
-                      onClick={() =>
-                        handleNavigation(item.title, item.iframeSrc)
-                      }
-                    >
-                      Activate
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
+    <div>
+      <div className={styles.header}>
+        <h1>Welcome to AI Library</h1>
       </div>
-    </>
+
+      {data.map((section, index) => (
+        <div className={styles.container} key={index}>
+          <h1>{section.category}</h1>
+
+          <div className={styles[section.category.toLowerCase()]}>
+            {section.items.map((item) => (
+              <div className={styles.b1} key={item.id}>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+                <button onClick={() => handleNavigation(item.iframeSrc)}>
+                  Activate
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }

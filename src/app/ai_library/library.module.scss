@@ -91,18 +91,61 @@
   }
 }
 
+/* Responsive layout for mobile view */
 @media (max-width: 600px) {
+  .header {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .container h1 {
+    font-size: 40px;
+  }
+
   .data-analysis,
   .coding,
   .lifestyle,
   .others {
-    grid-template-columns: 1fr; /* 1 column */
-  }
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+    padding: 10px; /* Reduce padding for smaller screens */
 
-  .container h1 {
-    font-size: 50px;
+    
+  }
+  .data-analysis .b1,
+.coding .b1,
+.lifestyle .b1,
+.others .b1 {
+ 
+  border: 2px solid black;
+  padding: 7%;
+  width: 80%;
+  border-radius: 10px;
+  text-align: center;
+  border-right: 5px solid black;
+  border-bottom: 5px solid black;
+  margin-left: -2%;
+}
+
+  .b1 {
     button {
       font-size: 16px;
+      padding: 8px 16px; /* Adjust button padding */
+      border-width: 1px;
+      border-left-width: 3px;
+      border-bottom-width: 3px;
     }
+  }
+
+  
+
+  .b1:hover {
+    box-shadow: 3px 3px 3px 3px lightgray; /* Soften shadow effect */
+  }
+  
+  .container {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+   
   }
 }

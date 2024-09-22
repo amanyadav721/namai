@@ -138,8 +138,8 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </motion.div>
-        <Carousel txt="Our aim is to automate everything" />
-        <div className={styles.showCaseContainer}>
+        {/* <Carousel txt="Our aim is to automate everything" /> */}
+        {/* <div className={styles.showCaseContainer}>
           <h1>Preview</h1>
           <div className={styles.showCase}>
             <div className={styles.videoWrapper}>
@@ -171,7 +171,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className={styles.p5}>
           <div className={styles.p5p1}>
             <h1>Our Mission</h1>

@@ -1,0 +1,43 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/app/ai_library/[...library]/ai.module.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.ai_container__R7g_O {
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  border-radius: 10px;
+  height: 100vh; /* Optional: Ensures full viewport height for centering */
+}
+
+.ai_loader__ScL3B {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+}
+
+.ai_spinner__9kjcr {
+  background-image: linear-gradient(white 45%, black);
+  width: 100px;
+  height: 100px;
+  margin-left: 45%;
+  animation: ai_spinning82341__Qcbbf 1.7s linear infinite;
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px white, 0px 5px 20px 0px black;
+}
+
+.ai_spinner1__cZ5C2 {
+  background-color: rgb(36, 36, 36);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+@keyframes ai_spinning82341__Qcbbf {
+  to {
+    transform: rotate(360deg);
+  }
+}

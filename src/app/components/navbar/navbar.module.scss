@@ -85,6 +85,84 @@
     gap: 20px;
   }
 }
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .navbarCenter {
+    display: none; /* Hide the navbar links on mobile */
+  }
+
+  .hamburger {
+    display: block; /* Show the hamburger menu button on mobile */
+  }
+
+  /* When the sidebar (navbarCenter) is active */
+  .navbarCenter.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 20px;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
+
+/* Tablet and Desktop styles */
+@media screen and (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navbarLeft {
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .companyName {
+    font-size: 28px;
+  }
+
+  .navbarCenter {
+    width: auto;
+    display: flex;
+  }
+
+  .navLinks {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .hamburger {
+    display: none; /* Hide the hamburger on larger screens */
+  }
+}
+
 
 /* Desktop styles */
 @media screen and (min-width: 1024px) {

@@ -22,6 +22,33 @@
       "static/chunks/main-app.js",
       "static/css/app/not-found.css",
       "static/chunks/app/not-found.js"
+    ],
+    "/ai_library/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/ai_library/page.css",
+      "static/chunks/app/ai_library/page.js"
+    ],
+    "/ai_library/[...library]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/ai_library/[...library]/page.css",
+      "static/chunks/app/ai_library/[...library]/page.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
+    ],
+    "/pages/Contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pages/Contact/page.js"
+    ],
+    "/pages/Api/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pages/Api/page.js"
     ]
   }
 }
