@@ -6,7 +6,7 @@
 
 
 ## Deployed Link
-Check out the live version of the project: [namahai.vercel.app](https://namahai.vercel.app/)
+Check out the live version of the project:(https://namahai.vercel.app/)
 
 ## Overview
 AI is a versatile library designed to enhance productivity across various tasks. With advanced tools for coding, data analytics, lifestyle enhancements, and overall productivity, our platform empowers users to streamline their operations effortlessly. 
