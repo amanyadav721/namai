@@ -24,6 +24,7 @@ export default function RootLayout({
       </Head>
       <body className={styles.container}>
         <NavBar />
+        <meta name="google-adsense-account" content="ca-pub-4742312301717342"></meta>
         <Suspense fallback={<Loading />} />
         {children}
         <Footer />
