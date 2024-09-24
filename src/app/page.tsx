@@ -6,12 +6,26 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import Typing from "./components/effects/typingeffect";
 import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
+import Documentads from "./pages/_document/_document";
 
 export default function Home() {
   const router = useRouter();
 
   const controls = useAnimation();
   const secondCompRef = useRef(null);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4742312301717342";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    document.head.appendChild(script);
+    
+    // Cleanup script on unmount
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,6 +80,7 @@ export default function Home() {
           </div>
           <Carousel txt="AI empowers everyone by breaking barriers, enabling innovation, enhancing efficiency, and making advanced technology accessible to all" />
           <h1>Categories</h1>
+          
           {/* <div className={styles.part2}></div> */}
         </div>
 
