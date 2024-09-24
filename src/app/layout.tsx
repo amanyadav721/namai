@@ -6,6 +6,7 @@ import Footer from "./components/footer/footer";
 import Head from "next/head";
 import Loading from "./loading";
 import { Suspense } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "Namah ai",
@@ -24,6 +25,7 @@ export default function RootLayout({
       </Head>
       <body className={styles.container}>
         <NavBar />
+        <SpeedInsights/>
         <meta name="google-adsense-account" content="ca-pub-4742312301717342"></meta>
         <Suspense fallback={<Loading />} />
         {children}
