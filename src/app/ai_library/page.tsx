@@ -32,6 +32,13 @@ const data = [
           "PDF AI allows users to chat with multiple PDFs, view chat history, and interact with documents seamlessly.",
         iframeSrc: "https://namaai-datachat.hf.space",
       },
+      {
+        id: 2,
+        title: "Data Chad",
+        description:
+          "AI platform connects with MongoDB, Postgres, Databricks, Snowflake, and CSV, enabling seamless data queries and chat.",
+        iframeSrc: "https://nama-ai-datachad.streamlit.app/#data-chad",
+      },
     ],
   },
   {

@@ -7,7 +7,7 @@ import Head from "next/head";
 import Loading from "./loading";
 import { Suspense } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/react"; 
 
 export const metadata: Metadata = {
   title: "Namah ai",
@@ -27,10 +27,12 @@ export default function RootLayout({
       <body className={styles.container}>
         <NavBar />
         <SpeedInsights/>
-        <meta name="google-adsense-account" content="ca-pub-4742312301717342"></meta>
+        <Analytics/>
+        <meta name="google-adsense-account" content="ca-pub-4742312301717342">
         <Suspense fallback={<Loading />} />
         {children}
         <Footer />
+        </meta>
       </body>
     </html>
   );
