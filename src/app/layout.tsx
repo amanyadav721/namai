@@ -28,7 +28,7 @@ export default function RootLayout({
         <NavBar />
         <SpeedInsights/>
         <Analytics/>
-        <meta name="google-adsense-account" content="ca-pub-4742312301717342"> </meta>
+        <meta name="google-adsense-account" content="ca-pub-4742312301717342" /> 
         <Suspense fallback={<Loading />} />
         {children}
         <Footer />
