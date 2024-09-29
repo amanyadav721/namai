@@ -21,8 +21,8 @@
 
 .data-analysis,
 .coding,
-.lifestyle,
-.others {
+.education,
+.productivity {
   color: black;
   width: 100%;
   display: grid;
@@ -47,8 +47,8 @@
 
 .data-analysis .b1,
 .coding .b1,
-.lifestyle .b1,
-.others .b1 {
+.productivity .b1,
+.education .b1 {
   background-color: transparent;
   border: 2px solid black;
   padding: 20px;
@@ -75,8 +75,8 @@
 /* Responsive layout */
 @media (max-width: 1200px) {
   .data-analysis,
-  .coding,
-  .lifestyle,
+  .education,
+  .productivity,
   .others {
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
   }
@@ -84,8 +84,8 @@
 
 @media (max-width: 900px) {
   .data-analysis,
-  .coding,
-  .lifestyle,
+  .education,
+  .productivity,
   .others {
     grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
   }
@@ -104,8 +104,8 @@
 
   .data-analysis,
   .coding,
-  .lifestyle,
-  .others {
+  .Education,
+  .productivity {
     grid-template-columns: 1fr; /* Single column layout for mobile */
     padding: 10px; /* Reduce padding for smaller screens */
 
@@ -113,8 +113,8 @@
   }
   .data-analysis .b1,
 .coding .b1,
-.lifestyle .b1,
-.others .b1 {
+.education .b1,
+.productivity .b1 {
  
   border: 2px solid black;
   padding: 7%;

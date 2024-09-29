@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import Typing from "./components/effects/typingeffect";
 import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
-import Documentads from "./pages/_document/_document";
+import events from "./services/firebase/firebase"
 
 export default function Home() {
   const router = useRouter();
@@ -14,18 +14,11 @@ export default function Home() {
   const controls = useAnimation();
   const secondCompRef = useRef(null);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4742312301717342";
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    document.head.appendChild(script);
-    
-    // Cleanup script on unmount
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+useEffect(()=>{
+  events("landingpage",{
+    "user":"landingpage"
+  })
+},[])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -125,31 +118,16 @@ export default function Home() {
           </motion.div>
           <motion.div className={styles.comp2} variants={blockVariants}>
             <motion.div className={styles.p3} variants={blockVariants}>
-              <h1>Lifestyle</h1>
+              <h1>Education</h1>
               <p>
-                Lifestyle AI is your go-to library for enhancing daily living
-                through advanced AI tools. It offers solutions for social media
-                content generation, creative idea brainstorming, and more. With
-                Lifestyle AI, effortlessly craft engaging social media posts,
-                generate fresh ideas, and access tools designed to enrich
-                various aspects of your lifestyle.
+              Education AI is a revolutionary platform designed to transform the way you learn and interact with educational content. Harnessing advanced artificial intelligence, it offers personalized learning experiences tailored to individual needs and preferences. From generating customized quizzes and interactive learning modules to providing in-depth analysis of educational material, Education AI empowers learners of all ages to enhance their knowledge and skills effectively. With its intuitive tools, users can explore a wealth of resources, engage with diverse subjects, and receive real-time feedback, making education more accessible, engaging, and effective than ever before.
               </p>
             </motion.div>
             <motion.div className={styles.p4} variants={blockVariants}>
               <p>
-                AI is a versatile library designed to boost efficiency across
-                various tasks. It encompasses a wide range of tools aimed at
-                enhancing productivity in diverse areas. From advanced task
-                automation and scheduling to intelligent document management and
-                workflow optimization, Productivity AI offers solutions that
-                streamline your daily operations. It integrates seamlessly with
-                your existing systems, providing smart recommendations and
-                automating repetitive tasks to free up your time. Whether you
-                need to manage projects, organize your workspace, or improve
-                communication, Productivity AI equips you with innovative tools
-                to maximize your productivity and achieve more with less effort.
+              Productivity AI is your essential companion for maximizing efficiency and streamlining your daily tasks. Utilizing advanced artificial intelligence, this platform helps you organize your workload, set priorities, and optimize time management. With features like automated scheduling, task reminders, and progress tracking, Productivity AI empowers you to achieve your goals with ease. Whether you're a student, a professional, or an entrepreneur, this innovative tool provides insights and recommendations tailored to your unique workflow, enabling you to focus on what truly matters and elevate your productivity to new heights.
               </p>
-              <h1>Others</h1>
+              <h1>Prodcutivity</h1>
             </motion.div>
           </motion.div>
         </motion.div>

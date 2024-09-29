@@ -1,10 +1,7 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/ai_library/[...library]/page": "app/ai_library/[...library]/page.js",
   "/ai_library/page": "app/ai_library/page.js",
-  "/page": "app/page.js",
-  "/pages/Api/page": "app/pages/Api/page.js",
-  "/pages/Contact/page": "app/pages/Contact/page.js",
   "/pages/Doc/page": "app/pages/Doc/page.js",
+  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }

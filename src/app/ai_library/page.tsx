@@ -1,109 +1,103 @@
-"use client";
-import styles from "./library.module.scss";
-import events from "../services/firebase/firebase";
+  "use client";
+  import styles from "./library.module.scss";
+  import events from "../services/firebase/firebase";
 
-const data = [
-  {
-    category: "Coding",
-    items: [
-      {
-        id: 1,
-        title: "Django AI",
-        description:
-          "Generate and test Django application code with AI, export to PDF, and validate API endpoints seamlessly",
-        iframeSrc: "https://namaai-djangoai.hf.space",
-      },
-      {
-        id: 2,
-        title: "Componet AI HTML/CSS",
-        description:
-          "AI Component Generator creates HTML, CSS, Tailwind CSS, Vanilla CSS, or SCSS components instantly based on user prompts.",
-        iframeSrc: "https://namaai-component-generator.hf.space",
-      },
-    ],
-  },
-  {
-    category: "Data-Analysis",
-    items: [
-      {
-        id: 1,
-        title: "PDF AI",
-        description:
-          "PDF AI allows users to chat with multiple PDFs, view chat history, and interact with documents seamlessly.",
-        iframeSrc: "https://namaai-datachat.hf.space",
-      },
-      {
-        id: 2,
-        title: "Data Chad",
-        description:
-          "AI platform connects with MongoDB, Postgres, Databricks, Snowflake, and CSV, enabling seamless data queries and chat.",
-        iframeSrc: "https://nama-ai-datachad.streamlit.app/#data-chad",
-      },
-    ],
-  },
-  {
-    category: "Lifestyle",
-    items: [
-      {
-        id: 1,
-        title: "Quiz Ai",
-        description:
-          "Quiz AI is a platform that uses artificial intelligence to create personalized quizzes for students.",
-        iframeSrc: "https://namaai-shikshamiraz.hf.space",
-      },
-      {
-        id: 2,
-        title: "Image Generation AI",
-        description:
-          "This AI generates free images from text, offering users creative visuals quickly and easily for various needs.",
-        iframeSrc: "https://namaai-image-generation.hf.space",
-      },
-    ],
-  },
-  {
-    category: "Others",
-    items: [
-      {
-        id: 1,
-        title: "AI Gif maker",
-        description: "Ai based gif maker ",
-        iframeSrc: "https://namaai-gif-ai.hf.space",
-      },
-    ],
-  },
-];
+  const data = [
+    {
+      category: "Coding",
+      items: [
+        {
+          id: 1,
+          title: "Django AI",
+          description:
+            "Generate and test Django application code with AI, export to PDF, and validate API endpoints seamlessly",
+          iframeSrc: "https://namaai-djangoai.hf.space",
+        },
+        {
+          id: 2,
+          title: "Componet AI HTML/CSS",
+          description:
+            "AI Component Generator creates HTML, CSS, Tailwind CSS, Vanilla CSS, or SCSS components instantly based on user prompts.",
+          iframeSrc: "https://namaai-component-generator.hf.space",
+        },
+      ],
+    },
+    {
+      category: "Data-Analysis",
+      items: [
+        {
+          id: 1,
+          title: "PDF AI",
+          description:
+            "PDF AI allows users to chat with multiple PDFs, view chat history, and interact with documents seamlessly.",
+          iframeSrc: "https://namaai-datachat.hf.space",
+        },
+        {
+          id: 2,
+          title: "Data Chad",
+          description:
+            "AI platform connects with MongoDB, Postgres, Databricks, Snowflake, and CSV, enabling seamless data queries and chat.",
+          iframeSrc: "https://nama-ai-datachad.streamlit.app/#data-chad",
+        },
+      ],
+    },
+    {
+      category: "Education",
+      items: [
+        {
+          id: 1,
+          title: "Quiz Ai",
+          description:
+            "Quiz AI is a platform that uses artificial intelligence to create personalized quizzes for students.",
+          iframeSrc: "https://namaai-shikshamiraz.hf.space",
+        },
+      ],
+    },
+    {
+      category: "Productivity",
+      items: [
+        {
+          id: 1,
+          title: "Image Generation AI",
+          description:
+            "This AI generates free images from text, offering users creative visuals quickly and easily for various needs.",
+          iframeSrc: "https://namaai-image-generation.hf.space",
+        },
+      ],
+    },
+  ];
 
-export default function AiLibrary() {
-  const handleNavigation = (iframeSrc: string) => {
-    events("aiapp_choose", {
-      ai_name: iframeSrc,
-    });
-    window.location.href = iframeSrc; // Redirects to the external URL
-  };
+  export default function AiLibrary() {
+    const handleNavigation = (iframeSrc: string) => {
+      events("aiapp_choose", {
+        ai_name: iframeSrc,
+      });
+      window.location.href = iframeSrc; // Redirects to the external URL
+    };
 
-  return (
-    <div>
-      <div className={styles.header}>
-        <h1>Welcome to AI Library</h1>
-      </div>
-
-      {data.map((section, index) => (
-        <div className={styles.container} key={index}>
-          <h1>{section.category}</h1>
-
-          <div className={styles[section.category.toLowerCase()]}>
-            {section.items.map((item) => (
-              <div className={styles.b1} key={item.id}>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-                <button onClick={() => handleNavigation(item.iframeSrc)}>
-                  Activate
-                </button>
-              </div>
-            ))}
-          </div>
+    return (
+      <div>
+        <div className={styles.header}>
+          <h1>Welcome to AI Library</h1>
         </div>
-      ))}
-    </div>
-  );
-}
+
+        {data.map((section, index) => (
+          <div className={styles.container} key={index}>
+            <h1>{section.category}</h1>
+
+            <div className={styles[section.category.toLowerCase()]}>
+              {section.items.map((item) => (
+                <div className={styles.b1} key={item.id}>
+                  <h2>{item.title}</h2>
+                  <p>{item.description}</p>
+                  <button onClick={() => handleNavigation(item.iframeSrc)}>
+                    Activate
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }

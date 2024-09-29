@@ -1,0 +1,74 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.container p {
+    font-size: large;
+}
+
+.container .code {
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.container .code .prompts {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container .code .prompts .sec1 {
+    border: 2px solid black;
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    box-shadow: 5px 5px 5px 5px gray;
+    color: white;
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .container .code {
+        padding: 10px;
+    }
+
+    .container .code .prompts {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .container .code .prompts .sec1 {
+        width: 100%;
+        min-width: unset;
+    }
+   
+}
+
+@media screen and (max-width: 480px) {
+    .container h1 {
+        font-size: 1.5em;
+    }
+
+    .container p {
+        font-size: medium;
+    }
+
+    .container .code {
+        padding: 5px;
+    }
+
+    .container .code .prompts .sec1 {
+        padding: 10px;
+        box-shadow: none;
+    }
+}
