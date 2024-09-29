@@ -1,7 +1,8 @@
-"use client"
-import React, { useState } from 'react';
-import Sidebar from "@/app/components/sidebar/page";
-import ComponentsAiDoc from "./Coding/DjangoAI/page";
+"use client"; // Required for client components in Next.js
+
+import React, { useState } from "react";
+import Sidebar from "../../components/sidebar/sidebar"; // Adjust path as necessary
+import ComponentsAiDoc from "./Coding/DjangoAI/page"; // Ensure these paths are correct
 import HtmlCssGeneratorDoc from "./Coding/ComponentAI/page";
 import PdfAiDoc from "./Data Analytics/Pdf ai/page";
 import DataChadDoc from "./Data Analytics/Data Chad/page";
@@ -18,13 +19,14 @@ const docs = [
   { docname: "Image Ai", component: ImageGenerationAiDoc },
 ];
 
-const Content = ({ activeDoc }) => {
-  const ActiveComponent = docs.find(doc => doc.docname === activeDoc)?.component;
+const Content: React.FC<{ activeDoc: string }> = ({ activeDoc }) => {
+  const ActiveComponent = docs.find((doc) => doc.docname === activeDoc)?.component;
+
   return ActiveComponent ? <ActiveComponent /> : <div>Select a document to view its content</div>;
 };
 
-const SidebarWithContent = () => {
-  const [activeDoc, setActiveDoc] = useState(docs[0].docname);
+const SidebarWithContent: React.FC = () => {
+  const [activeDoc, setActiveDoc] = useState(docs[0].docname); // Initial active document
 
   return (
     <div className={styles.container}>
