@@ -63,13 +63,6 @@
             "This AI generates free images from text, offering users creative visuals quickly and easily for various needs.",
           iframeSrc: "https://namaai-image-generation.hf.space",
         },
-        {
-          id: 2,
-          title: "Try On AI",
-          description:
-            "This AI generated free try on where you can try clothes you want to buy.",
-          iframSrc:"https://kwai-kolors-kolors-virtual-try-on.hf.space"
-        }
       ],
     },
   ];
