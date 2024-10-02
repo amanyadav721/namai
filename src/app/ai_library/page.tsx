@@ -58,6 +58,13 @@
       items: [
         {
           id: 1,
+          title: "Namah AI",
+          description:
+            "Namah Ai is assistant chatbot for better and accurate response with capabilites of major llm's",
+          iframeSrc: "https://namaai-namahai.hf.space",
+        },
+        {
+          id: 2,
           title: "Image Generation AI",
           description:
             "This AI generates free images from text, offering users creative visuals quickly and easily for various needs.",
