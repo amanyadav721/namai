@@ -37,7 +37,7 @@
           title: "Data Chad",
           description:
             "AI platform connects with MongoDB, Postgres, Databricks, Snowflake, and CSV, enabling seamless data queries and chat.",
-          iframeSrc: "https://nama-ai-datachad.streamlit.app/#data-chad",
+          iframeSrc: "https://namaai-datachadd.hf.space",
         },
       ],
     },
