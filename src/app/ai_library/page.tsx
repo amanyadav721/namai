@@ -15,10 +15,10 @@
         },
         {
           id: 2,
-          title: "Componet AI HTML/CSS",
+          title: "Componet Generator",
           description:
-            "AI Component Generator creates HTML, CSS, Tailwind CSS, Vanilla CSS, or SCSS components instantly based on user prompts.",
-          iframeSrc: "https://namaai-component-generator.hf.space",
+            "AI Component Generator creates HTML, CSS, Tailwind CSS, JSX,TSX instantly based on user prompts.",
+          iframeSrc: "https://namaai-compoai.hf.space",
         },
       ],
     },
