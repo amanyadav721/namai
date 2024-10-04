@@ -30,6 +30,7 @@ const SidebarWithContent: React.FC = () => {
 
   return (
     <div className={styles.container}>
+      <meta name="google-adsense-account" content="ca-pub-4742312301717342"/>
       <Sidebar docs={docs} setActiveDoc={setActiveDoc} activeDoc={activeDoc} />
       <div className={styles.content}>
         <Content activeDoc={activeDoc} />

@@ -10,6 +10,7 @@ export default function NotFound() {
   };
   return (
     <div className={styles.NotFound}>
+      <meta name="google-adsense-account" content="ca-pub-4742312301717342"/>
       <button className={styles.button} onClick={handlenaviagation}>
         <div className={styles.blackhole}>
           <span className={styles.rocketPath}>
@@ -35,6 +36,7 @@ export default function NotFound() {
       <p>Nah! this page does not belongs to Namah ai</p>
 
       <Link href="/">Return Home</Link>
+      
     </div>
   );
 }

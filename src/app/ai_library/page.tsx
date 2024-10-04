@@ -84,6 +84,7 @@
 
     return (
       <div>
+        <meta name="google-adsense-account" content="ca-pub-4742312301717342"/>
         <div className={styles.header}>
           <h1>Welcome to AI Library</h1>
         </div>

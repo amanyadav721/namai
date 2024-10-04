@@ -53,6 +53,7 @@ useEffect(()=>{
   return (
     <div>
       <main>
+      <meta name="google-adsense-account" content="ca-pub-4742312301717342"/>
         <div className={styles.container}>
           <div className={styles.part1}>
             <div className={styles.activeusers}>
