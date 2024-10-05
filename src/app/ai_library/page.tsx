@@ -39,6 +39,13 @@
             "AI platform connects with MongoDB, Postgres, Databricks, Snowflake, and CSV, enabling seamless data queries and chat.",
           iframeSrc: "https://namaai-datachadd.hf.space",
         },
+        {
+          id: 3,
+          title: "Mongo Chat",
+          description:
+            "AI platform connects with MongoDB, you can now connect with mongodb database and have insights with just prompts.",
+          iframeSrc: "https://namaai-mongochat.hf.space",
+        },
       ],
     },
     {
