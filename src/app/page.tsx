@@ -207,6 +207,30 @@ useEffect(()=>{
             </div>
           </div>
         </div>
+        <div className={styles.salutationtitle}>
+        <h1>Testimonials</h1>
+        </div>
+       
+        <div className={styles.salutation}>
+          
+          <div className={styles.salutation1}> <Image src="/assets/sushant.jpeg" alt="Namah Ai" width={100} height={100} />
+          <p>"Namah Ai is an incredibly versatile AI library that has transformed the way I work as an SDE. Its wide range of tools, from image generation to data analytics, has streamlined my workflow and boosted productivity. NamaaI has truly become an essential part of my development process" </p>
+          <h4>Sushant Bisht</h4>
+          <p>SDE, Juspay</p>
+          </div>
+          <div className={styles.salutation1}> <Image src="/assets/jaspreet.jpeg" alt="Namah Ai" width={100} height={100} />
+          <p>"Namah Ai has been a game-changer for me as an SDE at Atlassian. Its versatility in AI tools, from seamless data handling to creative image generation, has significantly optimized my workflow. Whether it's automating tasks or enhancing productivity, NamaaI delivers beyond expectations" </p>
+          <h4>Jaspreet Singh</h4>
+          <p>SDE, Atlassian </p>
+          </div>
+          <div className={styles.salutation1}> <Image src="/assets/patrik.jpeg" alt="Namah Ai" width={100} height={100} />
+          <p>"Namah Ai has been a fantastic addition to my toolkit at Park+ as an SDE. Its versatility in AI tools has streamlined complex tasks, from data analytics to content generation. It helped me boost productivity and efficiency across multiple projects." </p>
+          <h4>Pratik Rai</h4>
+          <p>SDE, Park+ </p>
+          </div>
+         
+
+        </div>
       </main>
     </div>
   );

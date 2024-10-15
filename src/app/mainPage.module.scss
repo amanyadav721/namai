@@ -230,6 +230,41 @@
     }
   }
 }
+.salutationtitle{
+  margin-top: 5%;
+  h1{
+    font-size: 48px;
+    text-align: center;
+  }
+}
+.salutation{
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  // background-color: red;
+  padding: 20px;
+  .salutation1{
+    h1{
+      font-size: 20px;
+    }
+    padding: 10px;
+    box-shadow: 5px 5px 5px 5px gray;
+    // border: 2px solid black;
+    text-align: center;
+    gap: 10px;
+    img{
+      padding: 10px;
+      border-radius: 50%;
+    }
+    p{
+      font-size: 12px;
+      padding: 10px;
+    }
+  }
+}
 @media (max-width: 600px) {
   .container {
     padding: 0 10px;
@@ -267,7 +302,7 @@
       margin-right: 5%;
       padding-left: 3%;
       padding-right: 3%;
-
+      
       h1 {
         font-size: 10vw; /* Larger on small screens */
       }
@@ -288,6 +323,7 @@
         }
       }
     }
+   
   }
 
   .secondComp {
@@ -366,10 +402,15 @@
     width: 75%;
     padding: 10px;
     padding-right: 5px;
+    
   }
   .p5 .onediv {
     height: 350px;
     
+  }
+  .salutation{
+    flex-direction: column;
+    gap: 20px;
   }
 }
 @media (min-width: 768px) {

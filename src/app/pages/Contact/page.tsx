@@ -1,5 +1,7 @@
+"useclient"
+import ContactForm from "../../components/contact/contact";
 export default function Contact () {
-    return(<h1>
-        Coming Soon
-    </h1>);
+    return(<div>
+        <ContactForm />
+    </div>);
 }
