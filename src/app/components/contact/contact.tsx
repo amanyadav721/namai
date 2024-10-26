@@ -1,153 +1,97 @@
-// import type { NextApiRequest, NextApiResponse } from 'next';
-// import nodemailer from 'nodemailer';
+"use client"
+import { useState } from 'react';
+import styles from "./contact.module.scss"
+export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
 
-// export default async function handler(
-//   req: NextApiRequest,
-//   res: NextApiResponse
-// ) {
-//   if (req.method !== 'POST') {
-//     return res.status(405).json({ message: 'Method not allowed' });
-//   }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
 
-//   try {
-//     const { name, email, description } = req.body;
+    try {
+      const formData = new FormData(event.target);
+      formData.append("access_key", "7f03b5c4-79e9-4f35-bd0f-d0236b72a3d7");
 
-//     // Create email transporter
-//     const transporter = nodemailer.createTransport({
-//       service: 'gmail',
-//       auth: {
-//         user: process.env.EMAIL_USER,
-//         pass: process.env.EMAIL_APP_PASSWORD
-//       }
-//     });
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
 
-//     // Email content
-//     const mailOptions = {
-//       from: process.env.EMAIL_USER,
-//       to: 'ad721603@gmail.com',
-//       subject: `New Contact Form Submission from ${name}`,
-//       text: `
-//         Name: ${name}
-//         Email: ${email}
-        
-//         Message:
-//         ${description}
-//       `,
-//       html: `
-//         <h2>New Contact Form Submission</h2>
-//         <p><strong>Name:</strong> ${name}</p>
-//         <p><strong>Email:</strong> ${email}</p>
-//         <h3>Message:</h3>
-//         <p>${description}</p>
-//       `
-//     };
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      });
 
-//     // Send email
-//     await transporter.sendMail(mailOptions);
-//     res.status(200).json({ message: 'Email sent successfully' });
-//   } catch (error) {
-//     console.error('Error sending email:', error);
-//     res.status(500).json({ message: 'Error sending email' });
-//   }
-// }
+      const result = await response.json();
+      
+      if (result.success) {
+        // Show notification
+        setShowNotification(true);
+        // Reset form
+        event.target.reset();
+        // Hide notification after 5 seconds
+        setTimeout(() => {
+          setShowNotification(false);
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
-// // Modified ContactForm component
-// "use client"
-// import React, { useState } from 'react';
-// import styles from './contact.module.scss';
+return (
+<>
+<div className={styles.container}>
+        <form onSubmit={handleSubmit}>
+          <div className={styles.formGroup}>
+            <label htmlFor="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
 
-// const ContactForm: React.FC = () => {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     description: '',
-//   });
-//   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+          <div className={styles.formGroup}>
+            <label htmlFor="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
 
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-//     const { name, value } = e.target;
-//     setFormData({ ...formData, [name]: value });
-//   };
+          <div className={styles.formGroup}>
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Type your message here"
+              required
+            ></textarea>
+          </div>
 
-//   const handleSubmit = async (e: React.FormEvent) => {
-//     e.preventDefault();
-//     setStatus('sending');
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Sending...' : 'Submit Form'}
+          </button>
+        </form>
+      </div>
 
-//     try {
-//       const res = await fetch('/api/contact', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(formData),
-//       });
-
-//       if (res.ok) {
-//         setStatus('success');
-//         setFormData({ name: '', email: '', description: '' });
-//         setTimeout(() => setStatus('idle'), 3000);
-//       } else {
-//         setStatus('error');
-//       }
-//     } catch (error) {
-//       setStatus('error');
-//       console.error('Error submitting form:', error);
-//     }
-//   };
-
-//   return (
-//     <div className={styles.contactBox}>
-//       <h1>Contact Us</h1>
-//       <form onSubmit={handleSubmit}>
-//         <div className={styles.inputBox}>
-//           <input
-//             type="text"
-//             name="name"
-//             value={formData.name}
-//             onChange={handleChange}
-//             required
-//             disabled={status === 'sending'}
-//           />
-//           <label>Name</label>
-//         </div>
-//         <div className={styles.inputBox}>
-//           <input
-//             type="email"
-//             name="email"
-//             value={formData.email}
-//             onChange={handleChange}
-//             required
-//             disabled={status === 'sending'}
-//           />
-//           <label>Email</label>
-//         </div>
-//         <div className={styles.inputBox}>
-//           <textarea
-//             name="description"
-//             value={formData.description}
-//             onChange={handleChange}
-//             rows={4}
-//             required
-//             disabled={status === 'sending'}
-//           />
-//           <label>Description</label>
-//         </div>
-//         <button 
-//           type="submit" 
-//           className={styles.submitButton}
-//           disabled={status === 'sending'}
-//         >
-//           {status === 'sending' ? 'Sending...' : 'Submit'}
-//         </button>
-//         {status === 'success' && (
-//           <p className={styles.successMessage}>Message sent successfully!</p>
-//         )}
-//         {status === 'error' && (
-//           <p className={styles.errorMessage}>Failed to send message. Please try again.</p>
-//         )}
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default ContactForm;
+      <div className={`${styles.notification} ${showNotification ? styles.show : ''}`}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.309 17.708L22.706 15.31C22.8999 15.1161 23.0087 14.8554 23.0087 14.583C23.0087 14.3106 22.8999 14.0499 22.706 13.856L13.854 5.00397L5.00195 13.856C4.80808 14.0499 4.69922 14.3106 4.69922 14.583C4.69922 14.8554 4.80808 15.1161 5.00195 15.31L7.39895 17.708C7.59284 17.9019 7.85357 18.0107 8.12595 18.0107C8.39833 18.0107 8.65906 17.9019 8.85295 17.708L11.646 14.914V22.5C11.646 22.7652 11.7513 23.0196 11.9389 23.2071C12.1264 23.3946 12.3808 23.5 12.646 23.5H15.354C15.6192 23.5 15.8736 23.3946 16.0611 23.2071C16.2487 23.0196 16.354 22.7652 16.354 22.5V14.914L19.146 17.708C19.3399 17.9019 19.6006 18.0107 19.873 18.0107C20.1454 18.0107 20.4061 17.9019 20.6 17.708H20.309Z" fill="currentColor"/>
+        </svg>
+        Message sent successfully!
+      </div>
+</>
+);
+}
