@@ -1,96 +1,98 @@
 .container {
-  max-width: 30%;
+  max-width: min(90%, 500px);
   margin: 2rem auto;
-  margin-top: 3%;
-  padding: 2rem;  
+  margin-top: clamp(1rem, 3%, 3rem);
+  padding: clamp(1rem, 4vw, 2rem);
   border-left: 2px solid;
   border-right: 5px solid black;
   border-bottom: 5px solid black;
-  border-top:  2px solid black;
+  border-top: 2px solid black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   position: relative;
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.container form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
 
-    .formGroup {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+.container .formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-      label {
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: black;
-      }
-    }
+.container .formGroup label {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  font-weight: 500;
+  color: black;
+}
 
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.5rem;
-      border: 2px solid black;
-      font-size: 1rem;
-      transition: border-color 0.2s ease;
+.container input,
+.container textarea {
+  width: 100%;
+  padding: clamp(0.375rem, 1.5vw, 0.5rem);
+  border: 2px solid black;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  transition: border-color 0.2s ease;
+}
 
-      &:focus {
-        outline: none;
-        border-color: black;
-        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
-      }
+.container input:focus,
+.container textarea:focus {
+  outline: none;
+  border-color: black;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
 
-      &::placeholder {
-        color: #94a3b8;
-      }
-    }
+.container input::placeholder,
+.container textarea::placeholder {
+  color: #94a3b8;
+}
 
-    textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
+.container textarea {
+  min-height: clamp(100px, 20vh, 150px);
+  resize: vertical;
+}
 
-    button {
-      padding: 0.75rem 1.5rem;
-      background-color: none;
-      border: 2px solid black;
-      color: black;
-      border-radius: 4px;
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s ease;
+.container button {
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+  border-radius: 4px;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 
-      &:hover {
-        background-color: orangered;
-      }
+.container button:hover {
+  background-color: orangered;
+}
 
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
-      }
+.container button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+}
 
-      &:active {
-        transform: translateY(1px);
-      }
+.container button:active {
+  transform: translateY(1px);
+}
 
-      &:disabled {
-        background-color: #94a3b8;
-        cursor: not-allowed;
-      }
-    }
-  }
+.container button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
 }
 
 .notification {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: clamp(1rem, 4vw, 2rem);
+  right: clamp(1rem, 4vw, 2rem);
   background-color: white;
   color: black;
-  padding: 1rem 1.5rem;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
   border-radius: 6px;
   border: 2px solid black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -101,14 +103,30 @@
   opacity: 0;
   transition: all 0.3s ease;
   z-index: 1000;
+}
 
-  &.show {
-    transform: translateY(0);
-    opacity: 1;
+.notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.notification svg {
+  width: clamp(1rem, 3vw, 1.25rem);
+  height: clamp(1rem, 3vw, 1.25rem);
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
   }
+}
 
-  svg {
-    width: 1.25rem;
-    height: 1.25rem;
+@media (max-width: 480px) {
+  .notification {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    text-align: center;
+    justify-content: center;
   }
 }
