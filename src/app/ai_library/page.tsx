@@ -77,6 +77,13 @@
             "This AI generates free images from text, offering users creative visuals quickly and easily for various needs.",
           iframeSrc: "https://namaai-image-generation.hf.space",
         },
+        {
+          id: 3,
+          title: "Ingredients AI",
+          description:
+            "Ingredients AI offers quick, detailed insights into product ingredients, allowing users to understand each component's role",
+          iframeSrc: "https://namaai-ingredientanalyzer.hf.space",
+        },
       ],
     },
   ];
